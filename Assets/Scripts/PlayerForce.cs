@@ -8,7 +8,9 @@ public class PlayerForce : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(GetComponent<AIController>())
+        Handheld.Vibrate();
+        GameObject.FindObjectOfType<AudioSource>().Play();
+        if (GetComponent<AIController>())
         {
             GameStates.SetAiShot();
             collision.gameObject.GetComponent<Rigidbody>().AddForce(oponent.transform.forward * -20 + transform.right * Random.Range(-2, 2), ForceMode.Impulse);

@@ -7,6 +7,7 @@ public class AIController : MonoBehaviour
     public GameObject ball;
     Transform startPosition;
 
+    
 
     private void Start()
     {
@@ -17,6 +18,8 @@ public class AIController : MonoBehaviour
     void Update()
     {
         ball = GameObject.FindGameObjectWithTag("Ball");
-        transform.position = Vector3.Slerp(transform.position, new Vector3(ball.transform.position.x + Random.Range(-1, 1) / 10, startPosition.position.y, startPosition.position.z), 0.8f);
+    
+         transform.position = Vector3.Slerp(transform.position, new Vector3(ball.transform.position.x + Random.Range(-1, 1) / 10, startPosition.position.y, startPosition.position.z), 0.8f);
+        
     }
 }

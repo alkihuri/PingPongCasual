@@ -24,7 +24,11 @@ public class GameLogic : MonoBehaviour
             if (GameStates.isPlayerShot)
                 GameStates.playerScore++;
             if (GameStates.isAishot)
-                GameStates.aiScore++;
+                {
+                    GameObject.FindObjectOfType<CameraController>().ShakeCamera();
+                 Handheld.Vibrate();
+                    GameStates.aiScore++;
+                }
         }  
     }
     // Update is called once per frame
